@@ -1,0 +1,52 @@
+#header{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+}
+
+#header section.text{
+    width: 80%;
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+}
+
+#header section.text, h1.flex{
+    font-size: 4rem;
+    color: #002752;
+    text-align: center;
+    font-variant: small-caps;
+    margin-bottom: 0px;
+    margin-top: 1rem;
+    padding-bottom: 0px;
+    flex: 1 1 80%;
+    -webkit-flex: 1 1 80%;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+#header section.text, h2.flex{
+    font-size: 1rem;
+    color: #002752;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+    padding: 0px;
+    flex: 1 1 80%;
+    -webkit-flex: 1 1 80%;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+#header section.image{
+    width: 20%;
+    flex: 1;
+    -webkit-flex: 1;
+}
+
+#header section.image, img.fixed{
+    width: 90%;
+    height: 90%;
+    margin: 2px;
+    padding: 2px;
+}

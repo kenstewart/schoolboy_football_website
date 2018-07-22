@@ -1,0 +1,51 @@
+body{
+    font-size: 16px;
+    font-family: Arial, serif;
+    background-color: aliceblue;
+}
+
+fieldset{
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.error{
+    color: red;
+    font-size: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#column_container{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+}
+
+#column_container section{
+    display: flex;
+    display: -webkit-flex;
+    margin: auto;
+}
+
+#column_container section.left{
+    width: 60%;
+    flex: 1;
+    -webkit-flex: 1;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+
+#column_container section.right{
+    width: 40%;
+    flex: 1;
+    -webkit-flex: 1;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
