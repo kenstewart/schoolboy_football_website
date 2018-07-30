@@ -11,19 +11,19 @@ if ($submit != ''){
 
     if ($username = ''){
         echo $error .= "<span class='error'>You must enter your USERNAME!</span><br/>"; //displaying the error message
-        echo "Please <a href='$self'>resubmit</a>"; //creating a link back to the form
+        echo "Please <a href='index.php?action=login'>resubmit</a>"; //creating a link back to the form
         exit();
     }
     elseif ($password = ''){
         echo $error .= "<span class='error'>You must enter your PASSWORD!</span><br/>";
-        echo "Please <a href='$self'>resubmit</a>";
+        echo "Please <a href='index.php?action=login'>resubmit</a>";
         exit();
     }
-    //elseif (!password_verify($password, $hash)){ //checking if the password entered matches the hashed password in the database
-        //echo $error .= "<span class='error'>Invalid Password!</span><br/>";
-        //echo "Please <a href='$self'>resubmit</a>";
-        //exit();
-    //}
+    elseif (!password_verify($password, $hash)){ //checking if the password entered matches the hashed password in the database
+        echo $error .= "<span class='error'>Invalid Password!</span><br/>";
+        echo "Please <a href='index.php?action=login'>resubmit</a>";
+        exit();
+    }
     else{
         $query = "SELECT * FROM admin WHERE username = '$username'" . "AND password = '$hash'"; //creating the query to select the user from the database
         $result = mysqli_query($db_link, $query);
@@ -35,7 +35,7 @@ if ($submit != ''){
         }
         else{
             echo $error .= "<span class='error'>Your details could not be found! Please try again.</span><br/>";
-            echo "Please <a href='$self'>resubmit</a>";
+            echo "Please <a href='index.php?action=login'>resubmit</a>";
             exit();
         }
     }
@@ -45,7 +45,7 @@ else {
 
     <fieldset>
         <legend><strong>Admin Login</strong></legend>
-        <form action="" method="post" autocomplete="off">
+        <form method="post" autocomplete="off">
             <table border="0" cellpadding="3" cellspacing="1">
                 <tr>
                     <td><label for="username">Username:</label></td>

@@ -13,12 +13,35 @@ fieldset{
     margin-bottom: 50px;
 }
 
+#scores{
+    width: 80%;
+    bottom: 0px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .error{
     color: red;
     font-size: 2rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+}
+
+input[type=submit]{
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 2px solid;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 #column_container{
@@ -48,4 +71,18 @@ fieldset{
     -webkit-flex: 1;
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
+}
+
+#column_container h1{
+    text-align: center;
+    color: #002752;
+    font-size: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#column_container p{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }

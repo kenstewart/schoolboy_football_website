@@ -38,8 +38,108 @@ switch ($action){
         break;
 
     //if 'scores' then show scores page
-    case 'scores':
-        scores_action();    //call the function
+    case 'scoresu13':
+        scoresu13_action();    //call the function
+        break;
+
+    case 'scoresu14':
+        scoresu14_action();
+        break;
+
+    case 'castleknocku13':
+        castleknocku13_action();
+        break;
+
+    case 'castleknocku14':
+        castleknocku14_action();
+        break;
+
+    case 'corduffu13':
+        corduffu13_action();
+        break;
+
+    case 'corduffu14':
+        corduffu14_action();
+        break;
+
+    case 'hartstownu13':
+        hartstownu13_action();
+        break;
+
+    case 'hartstownu14':
+        hartstownu14_action();
+        break;
+
+    case 'mochtasu13':
+        mochtasu13_action();
+        break;
+
+    case 'mochtasu14':
+        mochtasu14_action();
+        break;
+
+    case 'mountviewu13':
+        mountviewu13_action();
+        break;
+
+    case 'mountviewu14':
+        mountviewu14_action();
+        break;
+
+    case 'veronau13':
+        veronau13_action();
+        break;
+
+    case 'veronau14':
+        veronau14_action();
+        break;
+
+    case 'castleknocku13results':
+        castleknocku13results_action();
+        break;
+
+    case 'castleknocku14results':
+        castleknocku14results_action();
+        break;
+
+    case 'corduffu13results':
+        corduffu13results_action();
+        break;
+
+    case 'corduffu14results':
+        corduffu14results_action();
+        break;
+
+    case 'hartstownu13results':
+        hartstownu13results_action();
+        break;
+
+    case 'hartstownu14results':
+        hartstownu14results_action();
+        break;
+
+    case 'mochtasu13results':
+        mochtasu13results_action();
+        break;
+
+    case 'mochtasu14results':
+        mochtasu14results_action();
+        break;
+
+    case 'mountviewu13results':
+        mountviewu13results_action();
+        break;
+
+    case 'mountviewu14results':
+        mountviewu14results_action();
+        break;
+
+    case 'veronau13results':
+        veronau13results_action();
+        break;
+
+    case 'veronau14results':
+        veronau14results_action();
         break;
 
     //else show home page

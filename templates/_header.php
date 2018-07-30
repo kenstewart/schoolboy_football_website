@@ -1,4 +1,12 @@
 <?php
+session_start(); //starting a session if there is none already
+if (!isset($_SESSION['count'])){ //checking if the $_SESSION['count'] variable exists
+    $_SESSION['count'] = 1; //initialising the variable to 1 if it does not exist already
+}
+else{
+    $_SESSION['count']++; //incrementing the variable if it existed already
+}
+
 require_once __DIR__ . '/../templates/db_connect.php'; //using the db_connect file to connect to the database
 
 $db_link = db_connect("football"); //connecting to the football database

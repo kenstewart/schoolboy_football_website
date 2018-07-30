@@ -7,7 +7,6 @@ require_once __DIR__ . '/../templates/_header.php';
         <h1>Contact details</h1>
 
         <p>If you would like to contact us regarding any part of this website, our direct email address is:- </p>
-
         <p><em>B00003686@student.itb.ie</em></p>
     </section>
 
