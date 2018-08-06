@@ -22,11 +22,6 @@ switch ($action){
         login_action();     //call the function
         break;
 
-    //if 'league' then show league page
-    case 'league':
-        league_action();  //call the function
-        break;
-
     //if 'sitemap' then show sitemap page
     case 'sitemap':
         sitemap_action();   //call the function

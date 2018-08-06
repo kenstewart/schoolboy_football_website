@@ -4,18 +4,19 @@ body{
     background-color: aliceblue;
 }
 
+h1{
+    text-align: center;
+}
+
 fieldset{
     width: 40%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
 }
 
 #scores{
     width: 80%;
-    bottom: 0px;
+    bottom: 0;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -24,30 +25,54 @@ fieldset{
 .error{
     color: red;
     font-size: 2rem;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+}
+
+a{
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 input[type=submit]{
     padding: 10px;
     text-align: center;
     font-size: 1.2rem;
-    background-color: transparent;
     border: 2px solid;
     font-weight: 700;
     border-radius: 5px;
+    background-color: #9fcdff;
+}
+
+input[type=submit].small{
+    font-size: .8rem;
+    font-weight: 300;
 }
 
 input[type=submit]:hover{
     cursor: pointer;
     text-decoration: underline;
+    background-color: darkturquoise;
 }
 
 #column_container{
     width: 100%;
     display: flex;
     display: -webkit-flex;
+    padding-top: 10px;
 }
 
 #column_container section{
@@ -63,6 +88,7 @@ input[type=submit]:hover{
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-flow: row wrap;
+    margin-top: 10px;
 }
 
 #column_container section.right{
@@ -71,18 +97,32 @@ input[type=submit]:hover{
     -webkit-flex: 1;
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
+    background-color: white;
 }
 
 #column_container h1{
+    width: 80%;
     text-align: center;
     color: #002752;
     font-size: 2rem;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 0;
 }
 
 #column_container p{
+    width: 80%;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
+}
+
+#column_container img{
+    margin: auto;
+    padding: 10px;
+}
+
+#sitemap a{
+    font-size: 1rem;
+    font-weight: normal;
 }

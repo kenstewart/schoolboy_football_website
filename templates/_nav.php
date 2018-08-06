@@ -14,7 +14,7 @@
             </li>
 
             <li>
-                <a href="index.php?action=login" class="<? $loginLinkClass ?>">Login</a>
+                <a href="index.php?action=login" class="<?= $loginLinkClass ?>">Login</a>
             </li>
         </ul>
     </div>

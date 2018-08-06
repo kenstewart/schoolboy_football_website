@@ -16,9 +16,9 @@
     color: #002752;
     text-align: center;
     font-variant: small-caps;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 1rem;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     flex: 1 1 80%;
     -webkit-flex: 1 1 80%;
     flex-wrap: wrap;
@@ -29,9 +29,9 @@
     font-size: 1rem;
     color: #002752;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 0.5rem;
-    padding: 0px;
+    padding: 0;
     flex: 1 1 80%;
     -webkit-flex: 1 1 80%;
     flex-wrap: wrap;

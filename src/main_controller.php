@@ -43,18 +43,6 @@ function login_action()
     require_once __DIR__ . '/../templates/login.php';
 }
 
-function league_action()
-{
-    $pageTitle = "League Table";
-    $indexLinkClass = "";
-    $aboutLinkClass = "";
-    $contactLinkClass = "";
-    $loginLinkClass = "current_page";
-
-    $leagues = display_league_table();  //get data from model function
-    require_once __DIR__ . '/../templates/league.php';
-}
-
 function sitemap_action()
 {
     $pageTitle = "Sitemap";

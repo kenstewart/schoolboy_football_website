@@ -10,18 +10,33 @@ if ($submit != ''){
     $error = '';
 
     if ($username = ''){
+        echo "<div id='column_container'>";
         echo $error .= "<span class='error'>You must enter your USERNAME!</span><br/>"; //displaying the error message
-        echo "Please <a href='index.php?action=login'>resubmit</a>"; //creating a link back to the form
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<a href='index.php?action=login'>Please resubmit</a>"; //creating a link back to the form
+        echo "</div>";
         exit();
     }
     elseif ($password = ''){
+        echo "<div id='column_container'>";
         echo $error .= "<span class='error'>You must enter your PASSWORD!</span><br/>";
-        echo "Please <a href='index.php?action=login'>resubmit</a>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<a href='index.php?action=login'>Please resubmit</a>";
+        echo "</div>";
         exit();
     }
     elseif (!password_verify($password, $hash)){ //checking if the password entered matches the hashed password in the database
+        echo "<div id='column_container'>";
         echo $error .= "<span class='error'>Invalid Password!</span><br/>";
-        echo "Please <a href='index.php?action=login'>resubmit</a>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<a href='index.php?action=login'>Please resubmit</a>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<p><a href='index.php?action=admin'>Continue to Admin section.</a></p>";
+        echo "</div>";
         exit();
     }
     else{
@@ -30,12 +45,23 @@ if ($submit != ''){
         $count = mysqli_num_rows($result);
 
         if ($count == 1){ //checking if one row has been selected
+            echo "<div id='column_container'>";
             echo "Thank you ".$username.". You are now logged in.<br/>";
+            echo "</div>";
+            echo "<div id='column_container'>";
             echo "<a href='index.php?action=admin'>Continue to Admin section.</a>";
+            echo "</div>";
         }
         else{
+            echo "<div id='column_container'>";
             echo $error .= "<span class='error'>Your details could not be found! Please try again.</span><br/>";
-            echo "Please <a href='index.php?action=login'>resubmit</a>";
+            echo "</div>";
+            echo "<div id='column_container'>";
+            echo "<a href='index.php?action=login'>Please resubmit</a>";
+            echo "</div>";
+            echo "<div id='column_container'>";
+            echo "<p><a href='index.php?action=admin'>Continue to Admin section.</a></p>";
+            echo "</div>";
             exit();
         }
     }
@@ -57,7 +83,7 @@ else {
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="submit" value="LOGIN"></td>
+                    <td align="center"><input type="submit" name="submit" value="LOGIN" class="small"></td>
                 </tr>
             </table>
         </form>

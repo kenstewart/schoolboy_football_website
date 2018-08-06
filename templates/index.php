@@ -14,13 +14,23 @@ if ($submit != ''){
     $count = mysqli_num_rows($result);
 
     if ($count == 1){
-        echo "<p>You have chosen " . ucfirst($club) . " " . $age . "s.<br></p>";
-        echo "<a href='index.php?action=$selected'>Continue to this page.</a><br>";
-        echo "<a href='index.php'>Or return to Home page.</a>";
+        echo "<div id='column_container'>";
+        echo "<h1>You have chosen " . ucfirst($club) . " " . $age . "s.</h1>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<p><a href='index.php?action=$selected'>Continue to this page.</a></p>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<p><a href='index.php'>Or return to Home page.</a></p>";
+        echo "</div>";
     }
     else{
+        echo "<div id='column_container'>";
         echo $error .= "<span class='error'>Your page could not be found.</span><br>";
-        echo "Please <a href='$self'>Try again</a>";
+        echo "</div>";
+        echo "<div id='column_container'>";
+        echo "<a href='$self'>Please try again</a>";
+        echo "</div>";
         exit();
     }
 }
@@ -51,7 +61,7 @@ else {
                             </select>
                         </td>
                         <td>
-                            <input type="submit" name="submit" value="Go to selected team page">
+                            <input type="submit" name="submit" value="Go to selected team page" class="small">
                         </td>
                     </tr>
                 </table>
@@ -61,7 +71,9 @@ else {
         </section>
 
         <section class="right">
-            <textarea name="news" rows="20" cols="50"> News Feed </textarea>
+            <?php
+            require_once __DIR__ . '/../templates/_news.php';
+            ?>
         </section>
     </div>
 

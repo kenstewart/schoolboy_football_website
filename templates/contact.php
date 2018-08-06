@@ -11,7 +11,9 @@ require_once __DIR__ . '/../templates/_header.php';
     </section>
 
     <section class="right">
-        <textarea name="news" rows="20" cols="50"> News Feed </textarea>
+        <?php
+        require_once __DIR__ . '/../templates/_news.php';
+        ?>
     </section>
 </div>
 
