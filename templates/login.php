@@ -6,7 +6,7 @@ $submit = isset($_REQUEST['submit']) ? $_REQUEST['submit'] : ''; //checking if t
 if ($submit != ''){
     $username = trim(isset($_REQUEST['username'])) ? $_REQUEST['username'] : ''; //creating the variables with the values entered
     $password = trim(isset($_REQUEST['password'])) ? $_REQUEST['password'] : '';
-    $hash = md5($password); //hashing the password for better security
+    //$hash = md5($password); //hashing the password for better security
     $error = '';
 
     if ($username = ''){
@@ -27,20 +27,20 @@ if ($submit != ''){
         echo "</div>";
         exit();
     }
-    elseif (!password_verify($password, $hash)){ //checking if the password entered matches the hashed password in the database
-        echo "<div id='column_container'>";
-        echo $error .= "<span class='error'>Invalid Password!</span><br/>";
-        echo "</div>";
-        echo "<div id='column_container'>";
-        echo "<a href='index.php?action=login'>Please resubmit</a>";
-        echo "</div>";
-        echo "<div id='column_container'>";
-        echo "<p><a href='index.php?action=admin'>Continue to Admin section.</a></p>";
-        echo "</div>";
-        exit();
-    }
+    //elseif (!password_verify($password, $hash)){ //checking if the password entered matches the hashed password in the database
+      //  echo "<div id='column_container'>";
+        //echo $error .= "<span class='error'>Invalid Password!</span><br/>";
+        //echo "</div>";
+        //echo "<div id='column_container'>";
+        //echo "<a href='index.php?action=login'>Please resubmit</a>";
+        //echo "</div>";
+        //echo "<div id='column_container'>";
+        //echo "<p><a href='index.php?action=admin'>Continue to Admin section.</a></p>";
+        //echo "</div>";
+        //exit();
+    //}
     else{
-        $query = "SELECT * FROM admin WHERE username = '$username'" . "AND password = '$hash'"; //creating the query to select the user from the database
+        $query = "SELECT * FROM admin WHERE username = '$username'" . "AND password = '$password'"; //creating the query to select the user from the database
         $result = mysqli_query($db_link, $query);
         $count = mysqli_num_rows($result);
 
@@ -71,7 +71,7 @@ else {
 
     <fieldset>
         <legend><strong>Admin Login</strong></legend>
-        <form method="post" autocomplete="off">
+        <form action="index.php?action=login" method="post" autocomplete="off">
             <table border="0" cellpadding="3" cellspacing="1">
                 <tr>
                     <td><label for="username">Username:</label></td>

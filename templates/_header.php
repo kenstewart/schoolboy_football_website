@@ -19,7 +19,7 @@ $self = $_SERVER['PHP_SELF'];  //initialising the $self variable in order to ref
 
 <head>
     <meta charset="utf-8">
-    <title>Schoolboy Football Website - <?= $pageTitle ?> </title>
+    <title>Junior Football Website - <?= $pageTitle ?> </title>
     <style>
         @import "/../public/css/basic.css";
         @import "/../public/css/header.css";
@@ -32,7 +32,7 @@ $self = $_SERVER['PHP_SELF'];  //initialising the $self variable in order to ref
     <header>
         <div id="header">
             <section class="text">
-                <h1 class="flex">Schoolboy Football Website</h1>
+                <h1 class="flex">Junior Football Website</h1>
                 <h2 class="flex">All The Information You Need About Your Local Club</h2>
             </section>
             <section class="image">

@@ -98,6 +98,7 @@ input[type=submit]:hover{
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     background-color: white;
+    margin-top: 10px;
 }
 
 #column_container h1{
@@ -120,6 +121,7 @@ input[type=submit]:hover{
 #column_container img{
     margin: auto;
     padding: 10px;
+    width: 80%;
 }
 
 #sitemap a{

@@ -9,7 +9,7 @@ if ($submit != ''){
     $fixture = $_REQUEST['fixture'];
     $error = '';
 
-    if ($fixture = ''){
+    if (empty($fixture)){
         echo "<div id='column_container'>";
         echo $error .= "<span class = 'error'>You must choose a fixture!</span><br>"; //display the error message if no fixture was chosen
         echo "</div>";
@@ -30,28 +30,32 @@ if ($submit != ''){
         }
 
         if ($count == 1){
+            mysqli_free_result($result);
             $query2 = "INSERT INTO 13results VALUES ('$fixture', '$date', '$home', '$home_team_score', 'vs', '$away', '$away_team_score')";
             $result2 = mysqli_query($db_link, $query2);
             $count2 = mysqli_num_rows($result2);
 
             if ($count2 == 1){
+                mysqli_free_result($result);
                 $query3 = "DELETE FROM 13fixtures WHERE id = '$fixture'";
-                $result3 = mysqli_query($db_link, $query3);
-                $count3 = mysqli_num_rows($result3);
+                $result = mysqli_query($db_link, $query3);
+                $count3 = mysqli_num_rows($result);
 
                 if ($count3 == 1){
+                    mysqli_free_result($result);
                     if ($home_team_score == $away_team_score){
                         $query4 = "UPDATE teams SET played = played + 1, drew = drew + 1, goals_for = goals_for + '$home_team_score', 
                                     goals_against = goals_against + '$away_team_score', goal_dif = goal_dif + '$home_team_score' - '$away_team_score', 
                                     points = points + 1
                                     WHERE age = 'u13' AND team = '$home'";
-                        $result4 = mysqli_query($db_link, $query4);
+                        $result = mysqli_query($db_link, $query4);
 
+                        mysqli_free_result($result);
                         $query5 = "UPDATE teams SET played = played + 1, drew = drew + 1, goals_for = goals_for + '$away_team_score', 
                                     goals_against = goals_against + '$home_team_score', goal_dif = goal_dif + '$away_team_score' - '$home_team_score', 
                                     points = points + 1 
                                     WHERE age = 'u13' AND team = '$away'";
-                        $result5 = mysqli_query($db_link, $query5);
+                        $result = mysqli_query($db_link, $query5);
 
                         echo "<div id='column_container'>";
                         echo "Update successful.<br>";
@@ -66,12 +70,13 @@ if ($submit != ''){
                                     goals_against = goals_against + '$away_team_score', goal_dif = goal_dif + '$home_team_score' - '$away_team_score', 
                                     points = points + 3 
                                     WHERE age = 'u13' AND team = '$home'";
-                        $result6 = mysqli_query($db_link, $query6);
+                        $result = mysqli_query($db_link, $query6);
 
+                        mysqli_free_result($result);
                         $query7 = "UPDATE teams SET played = played + 1, lost = lost + 1, goals_for = goals_for + '$away_team_score', 
                                     goals_against = goals_against + '$home_team_score', goal_dif = goal_dif + '$away_team_score' - '$home_team_score' 
                                     WHERE age = 'u13' AND team = '$away'";
-                        $result7 = mysqli_query($db_link, $query7);
+                        $result = mysqli_query($db_link, $query7);
 
                         echo "<div id='column_container'>";
                         echo "Update successful.<br>";
@@ -85,13 +90,14 @@ if ($submit != ''){
                         $query8 = "UPDATE teams SET played = played + 1, lost = lost + 1, goals_for = goals_for + '$home_team_score', 
                                     goals_against = goals_against + '$away_team_score', goal_dif = goal_dif + '$home_team_score' - '$away_team_score' 
                                     WHERE age = 'u13' AND team = '$home'";
-                        $result8 = mysqli_query($db_link, $query8);
+                        $result = mysqli_query($db_link, $query8);
 
+                        mysqli_free_result($result);
                         $query9 = "UPDATE teams SET played = played + 1, won = won + 1, goals_for = goals_for + '$away_team_score', 
                                     goals_against = goals_against + '$home_team_score', goal_dif = goal_dif + '$away_team_score' - '$home_team_score', 
                                     points = points + 3, 
                                     WHERE age = 'u13' AND team = '$away'";
-                        $result9 = mysqli_query($db_link, $query9);
+                        $result = mysqli_query($db_link, $query9);
 
                         echo "<div id='column_container'>";
                         echo "Update successful.<br>";
@@ -103,7 +109,7 @@ if ($submit != ''){
 
                     else {
                         echo "<div id='column_container'>";
-                        echo $error .= "<span class='error'>Your details could not be found 111! Please try again.</span><br/>";
+                        echo $error .= "<span class='error'>Your details could not be found 111!</span><br/>";
                         echo "</div>";
                         echo "<div id='column_container'>";
                         echo "<a href='index.php?action=scoresu13'>Please try again.</a>";
@@ -113,7 +119,7 @@ if ($submit != ''){
                 }
                 else {
                     echo "<div id='column_container'>";
-                    echo $error .= "<span class='error'>Your details could not be found 222! Please try again.</span><br/>";
+                    echo $error .= "<span class='error'>Your details could not be found 222!</span><br/>";
                     echo "</div>";
                     echo "<div id='column_container'>";
                     echo "<a href='index.php?action=scoresu13'>Please try again.</a>";
@@ -123,7 +129,7 @@ if ($submit != ''){
             }
             else {
                 echo "<div id='column_container'>";
-                echo $error .= "<span class='error'>Your details could not be found 333! Please try again.</span><br/>";
+                echo $error .= "<span class='error'>Your details could not be found 333!</span><br/>";
                 echo "</div>";
                 echo "<div id='column_container'>";
                 echo "<a href='index.php?action=scoresu13'>Please try again.</a>";
@@ -133,7 +139,11 @@ if ($submit != ''){
         }
         else{
             echo "<div id='column_container'>";
-            echo $error .= "<span class='error'>Your details could not be found 444! Please try again.</span><br/>";
+            echo $error .= "<span class='error'>Your details could not be found!</span><br/>";
+            echo "</div>";
+            echo "<div id='column_container'>";
+            $error = '';
+            echo $error .= "<span class='error'>Was this fixture updated already??</span><br/>";
             echo "</div>";
             echo "<div id='column_container'>";
             echo "<a href='index.php?action=scoresu13'>Please try again.</a>";
