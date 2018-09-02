@@ -1,8 +1,5 @@
 <?php
 
-//read in the declaration of the model/database function
-require_once __DIR__ . '/model_functions.php';
-
 function index_action()
 {
     $pageTitle = "Home Page";

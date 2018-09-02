@@ -70,7 +70,7 @@ else {
             <img src="/../public/images/strike.jpg" alt="Strike">
         </section>
 
-        <section class="right">
+        <section class="rightnews">
             <?php
             require_once __DIR__ . '/../templates/_news.php';
             ?>

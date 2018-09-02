@@ -11,7 +11,7 @@ require_once __DIR__ . '/../templates/_header.php';
         </p>
     </section>
 
-    <section class="right">
+    <section class="rightnews">
         <?php
         require_once __DIR__ . '/../templates/_news.php';
         ?>

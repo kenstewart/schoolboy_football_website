@@ -119,13 +119,13 @@ require_once __DIR__ . '/../templates/_header.php';
                 <a href="index.php?action=login">login</a>
                 <ul style="list-style-type: disclosure-open">
                     <li>
-                        <a href="index.php?action=admin">admin</a>
+                        <a href="index.php?action=login">admin</a>
                         <ul style="list-style-type: disc">
                             <li>
-                                <a href="index.php?action=scoresu13">under 13 scores</a>
+                                <a href="index.php?action=login">under 13 scores</a>
                             </li>
                             <li>
-                                <a href="index.php?action=scoresu14">under 14 scores</a>
+                                <a href="index.php?action=login">under 14 scores</a>
                             </li>
                         </ul>
                     </li>

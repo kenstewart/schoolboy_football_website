@@ -36,12 +36,13 @@ require_once __DIR__ . '/../templates/_header.php';
         </section>
 
         <section class="right">
+            <h1>League Table</h1><br>
             <?php
             echo "<table width = '100%' border = '1' cellpadding = '1' align = 'center'>";
 
             $query = "SELECT team, played, won, drew, lost, goals_for, goals_against, goal_dif, points FROM teams 
                   WHERE age = 'u13' 
-                  ORDER BY points, goal_dif, goals_for, won DESC";
+                  ORDER BY points DESC , goal_dif DESC , goals_for DESC , won DESC ";
 
             $result = mysqli_query($db_link, $query) or die("SQL query failed");
 

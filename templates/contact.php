@@ -10,7 +10,7 @@ require_once __DIR__ . '/../templates/_header.php';
         <p><em>B00003686@student.itb.ie</em></p>
     </section>
 
-    <section class="right">
+    <section class="rightnews">
         <?php
         require_once __DIR__ . '/../templates/_news.php';
         ?>

@@ -1,6 +1,6 @@
 body{
     font-size: 16px;
-    font-family: Arial, serif;
+    font-family: Arial, Verdana, sans-serif;
     background-color: aliceblue;
 }
 
@@ -92,6 +92,15 @@ input[type=submit]:hover{
 }
 
 #column_container section.right{
+    width: 40%;
+    flex: 1;
+    -webkit-flex: 1;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+#column_container section.rightnews{
     width: 40%;
     flex: 1;
     -webkit-flex: 1;
